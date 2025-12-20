@@ -302,20 +302,20 @@ const LoginPage = () => {
           </div>
 
           <div className="mt-10 pt-6">
-  <button
-    type="submit"
-    className="w-full py-3 px-4 gradient-bg text-white font-semibold rounded-md disabled:opacity-50 transition-all duration-200 shadow-md hover:shadow-lg"
-    disabled={isLoginLoading || isDataLoading}
-  >
-    {isLoginLoading
-      ? "Logging in..."
-      : isDataLoading
-      ? "Loading..."
-      : "Login"}
-  </button>
-</div>
+            <button
+              type="submit"
+              className="w-full py-3 px-4 gradient-bg text-white font-semibold rounded-md disabled:opacity-50 transition-all duration-200 shadow-md hover:shadow-lg"
+              disabled={isLoginLoading || isDataLoading}
+            >
+              {isLoginLoading
+                ? "Logging in..."
+                : isDataLoading
+                ? "Loading..."
+                : "Login"}
+            </button>
+          </div>
         </form>
-        <div className="fixed left-0 right-0 bottom-0 py-1 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center text-sm shadow-md z-10">
+        <div className="fixed left-0 right-0 bottom-0 py-1 px-4 gradient-bg text-white text-center text-sm shadow-md z-10">
           <a
             href="https://www.botivate.in/"
             target="_blank"
