@@ -680,53 +680,52 @@ export default function AssignTask() {
       }
 
       // Helper function to check if this is the first task for the user
-      const isFirstTaskForUser = async (doerName,taskDescription) => {
-        try {
-          const sheetId = "1nBT7umzLfh1sR8O44sk4s6W50TUQ3duNrW8rnLLs_Mw";
-          const sheetName = "Checklist";
+     const isFirstTaskForUser = async (doerName, taskDescription) => {
+  try {
+    const sheetId = "1nBT7umzLfh1sR8O44sk4s6W50TUQ3duNrW8rnLLs_Mw";
+    const sheetName = "Checklist";
 
-          const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(
-            sheetName
-          )}`;
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(
+      sheetName
+    )}`;
 
-          const response = await fetch(url);
-          if (!response.ok) {
-            console.log("Checklist sheet not found - treating as first task");
-            return true;
-          }
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.log("Checklist sheet not found - treating as first task");
+      return true;
+    }
 
-          const text = await response.text();
-          const jsonStart = text.indexOf("{");
-          const jsonEnd = text.lastIndexOf("}");
-          const jsonString = text.substring(jsonStart, jsonEnd + 1);
-          const data = JSON.parse(jsonString);
+    const text = await response.text();
+    const jsonStart = text.indexOf("{");
+    const jsonEnd = text.lastIndexOf("}");
+    const jsonString = text.substring(jsonStart, jsonEnd + 1);
+    const data = JSON.parse(jsonString);
 
-          if (!data.table || !data.table.rows || data.table.rows.length <= 1) {
-            console.log("Checklist sheet is empty - treating as first task");
-            return true;
-          }
+    if (!data.table || !data.table.rows || data.table.rows.length <= 1) {
+      console.log("Checklist sheet is empty - treating as first task");
+      return true;
+    }
 
-          // Check if doer name exists in column E (index 4) - "name" column
-         for (let i = 1; i < data.table.rows.length; i++) {
-            const row = data.table.rows[i];
+    // Check if doer name exists in column E (index 4) - "name" column
+    for (let i = 1; i < data.table.rows.length; i++) {
+      const row = data.table.rows[i];
 
-            const rowName = (row.c && row.c[4] && row.c[4].v) ? row.c[4].v.toString().trim() : "";
-            const rowDesc = (row.c && row.c[5] && row.c[5].v) ? row.c[5].v.toString().trim() : "";
+      const rowName = (row.c && row.c[4] && row.c[4].v) ? row.c[4].v.toString().trim() : "";
+      const rowDesc = (row.c && row.c[5] && row.c[5].v) ? row.c[5].v.toString().trim() : "";
 
-            if (rowName === doerName.trim() && rowDesc === taskDescription.trim()) {
-              console.log(`Task "${taskDescription}" for user "${doerName}" found in Checklist - NOT new`);
-              return false;
-            }
-          }
-          }
+      if (rowName === doerName.trim() && rowDesc === taskDescription.trim()) {
+        console.log(`Task "${taskDescription}" for user "${doerName}" found in Checklist - NOT new`);
+        return false;
+      }
+    }
 
-          console.log(`User "${doerName}" NOT found in Checklist - IS first task`);
-          return true;
-        } catch (error) {
-          console.error("Error checking first task:", error);
-          return true;
-        }
-      };
+    console.log(`User "${doerName}" NOT found in Checklist - IS first task`);
+    return true;
+  } catch (error) {
+    console.error("Error checking first task:", error);
+    return true;
+  }
+};
 
       // Determine the sheet(s) based on frequency and first-time user check
       let submitToSheets = [];
@@ -735,7 +734,7 @@ export default function AssignTask() {
         submitToSheets = ["DELEGATION"];
         console.log("One-time task - submitting to DELEGATION only");
       } else {
-        const isFirstTask = await isFirstTaskForUser(formData.doer);
+        const isFirstTask = await isFirstTaskForUser(formData.doer, formData.description);
         if (isFirstTask) {
           submitToSheets = ["Unique", "Checklist"];
           console.log("First task for user - submitting to both Unique and Checklist");
