@@ -72,8 +72,8 @@ const LoginPage = () => {
             // Extract data from columns C, D, E (indices 2, 3, 4)
             const username = row.c[3]
               ? String(row.c[3].v || "")
-                  .trim()
-                  .toLowerCase()
+                .trim()
+                .toLowerCase()
               : "";
             const password = row.c[4] ? String(row.c[4].v || "").trim() : "";
             const role = row.c[5] ? String(row.c[5].v || "").trim() : "user";
@@ -310,31 +310,20 @@ const LoginPage = () => {
               {isLoginLoading
                 ? "Logging in..."
                 : isDataLoading
-                ? "Loading..."
-                : "Login"}
+                  ? "Loading..."
+                  : "Login"}
             </button>
           </div>
         </form>
-        <div className="fixed left-0 right-0 bottom-0 py-1 px-4 gradient-bg text-white text-center text-sm shadow-md z-10">
-          <a
-            href="https://www.botivate.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            Powered by-<span className="font-semibold">Botivate</span>
-          </a>
-        </div>
       </div>
 
       {/* Toast Notification */}
       {toast.show && (
         <div
-          className={`fixed bottom-4 right-4 px-4 py-3 rounded-lg shadow-lg transition-all duration-300 ${
-            toast.type === "success"
+          className={`fixed bottom-4 right-4 px-4 py-3 rounded-lg shadow-lg transition-all duration-300 ${toast.type === "success"
               ? "bg-green-100 text-green-800 border-l-4 border-green-500"
               : "bg-red-100 text-red-800 border-l-4 border-red-500"
-          }`}
+            }`}
         >
           {toast.message}
         </div>

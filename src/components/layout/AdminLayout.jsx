@@ -235,17 +235,15 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                   <div>
                     <button
                       onClick={() => setIsDataSubmenuOpen(!isDataSubmenuOpen)}
-                      className={`flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                        route.active
+                      className={`flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${route.active
                           ? "bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700"
                           : "text-gray-700 hover:bg-blue-50"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3">
                         <route.icon
-                          className={`h-4 w-4 ${
-                            route.active ? "text-blue-600" : ""
-                          }`}
+                          className={`h-4 w-4 ${route.active ? "text-blue-600" : ""
+                            }`}
                         />
                         {route.label}
                       </div>
@@ -264,13 +262,12 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                                 category.link ||
                                 `/dashboard/data/${category.id}`
                               }
-                              className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors ${
-                                location.pathname ===
-                                (category.link ||
-                                  `/dashboard/data/${category.id}`)
+                              className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors ${location.pathname ===
+                                  (category.link ||
+                                    `/dashboard/data/${category.id}`)
                                   ? "bg-blue-50 text-blue-700 font-medium"
                                   : "text-gray-600 hover:bg-blue-50 hover:text-blue-700"
-                              }`}
+                                }`}
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {category.name}
@@ -283,16 +280,14 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                 ) : (
                   <Link
                     to={route.href}
-                    className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                      route.active
+                    className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${route.active
                         ? "bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700"
                         : "text-gray-700 hover:bg-blue-50"
-                    }`}
+                      }`}
                   >
                     <route.icon
-                      className={`h-4 w-4 ${
-                        route.active ? "text-blue-600" : ""
-                      }`}
+                      className={`h-4 w-4 ${route.active ? "text-blue-600" : ""
+                        }`}
                     />
                     {route.label}
                   </Link>
@@ -373,17 +368,6 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
             </div>
           </div>
         </div>
-        {/* Sidebar Footer */}
-        <div className="border-t border-blue-200 py-2 px-4 bg-gradient-to-r from-blue-100 to-purple-100">
-          <a
-            href="https://www.botivate.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-blue-700 hover:text-blue-900 hover:underline text-center block"
-          >
-            Powered by <span className="font-semibold">Botivate</span>
-          </a>
-        </div>
       </aside>
 
       {/* Mobile menu button */}
@@ -423,17 +407,15 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                           onClick={() =>
                             setIsDataSubmenuOpen(!isDataSubmenuOpen)
                           }
-                          className={`flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                            route.active
+                          className={`flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${route.active
                               ? "bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700"
                               : "text-gray-700 hover:bg-blue-50"
-                          }`}
+                            }`}
                         >
                           <div className="flex items-center gap-3">
                             <route.icon
-                              className={`h-4 w-4 ${
-                                route.active ? "text-blue-600" : ""
-                              }`}
+                              className={`h-4 w-4 ${route.active ? "text-blue-600" : ""
+                                }`}
                             />
                             {route.label}
                           </div>
@@ -452,13 +434,12 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                                     category.link ||
                                     `/dashboard/data/${category.id}`
                                   }
-                                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors ${
-                                    location.pathname ===
-                                    (category.link ||
-                                      `/dashboard/data/${category.id}`)
+                                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors ${location.pathname ===
+                                      (category.link ||
+                                        `/dashboard/data/${category.id}`)
                                       ? "bg-blue-50 text-blue-700 font-medium"
                                       : "text-gray-600 hover:bg-blue-50 hover:text-blue-700"
-                                  }`}
+                                    }`}
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                   {category.name}
@@ -471,17 +452,15 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                     ) : (
                       <Link
                         to={route.href}
-                        className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                          route.active
+                        className={`flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors ${route.active
                             ? "bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700"
                             : "text-gray-700 hover:bg-blue-50"
-                        }`}
+                          }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <route.icon
-                          className={`h-4 w-4 ${
-                            route.active ? "text-blue-600" : ""
-                          }`}
+                          className={`h-4 w-4 ${route.active ? "text-blue-600" : ""
+                            }`}
                         />
                         {route.label}
                       </Link>
@@ -563,17 +542,6 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                 </div>
               </div>
             </div>
-            {/* Mobile Sidebar Footer */}
-            <div className="border-t border-blue-200 py-2 px-4 bg-gradient-to-r from-blue-100 to-purple-100">
-              <a
-                href="https://www.botivate.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-blue-700 hover:text-blue-900 hover:underline text-center block"
-              >
-                Powered by <span className="font-semibold">Botivate</span>
-              </a>
-            </div>
           </div>
         </div>
       )}
@@ -610,11 +578,10 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
           <nav className="flex justify-around py-2">
             <Link
               to="/dashboard/admin"
-              className={`flex flex-col items-center text-sm p-2 transition-colors ${
-                location.pathname === "/dashboard/admin"
+              className={`flex flex-col items-center text-sm p-2 transition-colors ${location.pathname === "/dashboard/admin"
                   ? "text-blue-600 font-semibold"
                   : "text-gray-600 hover:text-blue-500"
-              }`}
+                }`}
               aria-label="Dashboard"
             >
               <Home className="w-6 h-6 mb-1" />
@@ -623,11 +590,10 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
 
             <Link
               to="/dashboard/data/sales"
-              className={`flex flex-col items-center text-sm p-2 transition-colors ${
-                location.pathname === "/dashboard/data/sales"
+              className={`flex flex-col items-center text-sm p-2 transition-colors ${location.pathname === "/dashboard/data/sales"
                   ? "text-blue-600 font-semibold"
                   : "text-gray-600 hover:text-blue-500"
-              }`}
+                }`}
               aria-label="Checklist"
             >
               <CalendarCheck className="w-6 h-6 mb-1" />
@@ -638,11 +604,10 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
             {userRole === "admin" && (
               <Link
                 to="/dashboard/assign-task"
-                className={`flex flex-col items-center text-sm p-2 transition-colors ${
-                  location.pathname === "/dashboard/assign-task"
+                className={`flex flex-col items-center text-sm p-2 transition-colors ${location.pathname === "/dashboard/assign-task"
                     ? "text-blue-600 font-semibold"
                     : "text-gray-600 hover:text-blue-500"
-                }`}
+                  }`}
                 aria-label="Assign Task"
               >
                 <CirclePlus className="w-6 h-6 mb-1" />
@@ -652,11 +617,10 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
 
             <Link
               to="/dashboard/delegation"
-              className={`flex flex-col items-center text-sm p-2 transition-colors ${
-                location.pathname === "/dashboard/delegation"
+              className={`flex flex-col items-center text-sm p-2 transition-colors ${location.pathname === "/dashboard/delegation"
                   ? "text-blue-600 font-semibold"
                   : "text-gray-600 hover:text-blue-500"
-              }`}
+                }`}
               aria-label="Delegation"
             >
               <BookmarkCheck className="w-6 h-6 mb-1" />
