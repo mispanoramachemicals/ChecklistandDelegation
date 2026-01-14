@@ -373,6 +373,17 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
             </div>
           </div>
         </div>
+        {/* Sidebar Footer */}
+        <div className="border-t border-blue-200 py-2 px-4 bg-gradient-to-r from-blue-100 to-purple-100">
+          <a
+            href="https://www.botivate.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-700 hover:text-blue-900 hover:underline text-center block"
+          >
+            Powered by <span className="font-semibold">Botivate</span>
+          </a>
+        </div>
       </aside>
 
       {/* Mobile menu button */}
@@ -552,6 +563,17 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
                 </div>
               </div>
             </div>
+            {/* Mobile Sidebar Footer */}
+            <div className="border-t border-blue-200 py-2 px-4 bg-gradient-to-r from-blue-100 to-purple-100">
+              <a
+                href="https://www.botivate.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-700 hover:text-blue-900 hover:underline text-center block"
+              >
+                Powered by <span className="font-semibold">Botivate</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
@@ -641,29 +663,6 @@ export default function AdminLayout({ children, darkMode, toggleDarkMode }) {
               <span className="text-xs">Delegation</span>
             </Link>
           </nav>
-
-          {/* Botivate footer */}
-          <div className="w-full border-t border-blue-200 gradient-bg text-white text-center text-xs py-1">
-            <a
-              href="https://www.botivate.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Powered by-<span className="font-semibold">Botivate</span>
-            </a>
-          </div>
-        </div>
-        {/* Desktop Botivate footer */}
-        <div className="fixed md:left-64 left-0 right-0 bottom-0 hidden md:block py-1 px-4 gradient-bg text-white text-center text-sm shadow-md z-10">
-          <a
-            href="https://www.botivate.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            Powered by-<span className="font-semibold">Botivate</span>
-          </a>
         </div>
       </div>
     </div>
